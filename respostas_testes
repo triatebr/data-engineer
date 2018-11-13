@@ -1,0 +1,29 @@
+Desafio Engenheiro de Dados.pdf
+
+Qual o objetivo do comando cache em Spark?
+Usado para pequenos conjuntos de dados, o comando 'cache()' é utilizado para alocar os arquivos na memória para posterior 
+manipulação dos dados.
+
+O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em
+MapReduce. Por quê?
+É importante destacar que o MapReduce é mais lento que o Spark na inicialização das tarefas. O Spark é mais rápido que o 
+MapReduce nas operações de leitura de entrada e map. Por fim, o Spark é mais rápido que o MapReduce na fase de combinação. 
+Isto ocorre pois a combinação baseada em hash é mais eficiente que a combinação baseada em sort para o WC. 
+O Spark possui uma menor complexidade quando trata coleções de informações em memória e nos componentes de combinação de 
+dados e por este motivo é mais rápido que o MapReduce.
+
+Qual é a função do SparkContext?
+O SparkContext​ configura os serviços internos e estabelece uma conexão com um ambiente de execução do Spark .
+Uma vez SparkContextcriado, você pode usá-lo para criar RDDs , acumuladores e variáveis de difusão , acessar os serviços 
+do Spark e executar trabalhos (até que SparkContext seja interrompido).
+
+Explique com suas palavras o que é Resilient Distributed Datasets (RDD).
+Encaro o RDD como recurso do Spark Core, que que permite o processamento distribuído em grande escala. Sua responsábilidade 
+é a gestão de memória, recuperação de falhas, distribuição e monitormanto dos jobs em um cluster e integração com os sistemas 
+de armazenamento. 
+
+GroupByKey é menos eficiente que reduceByKey em grandes dataset. Por quê?
+Ao contrário de groupByKey, reduceByKey não mistura dados no início. Como sabe que a operação de redução pode ser aplicada 
+na mesma partição primeiro, somente o resultado da função de redução é embaralhado na rede. 
+Isso causa uma redução significativa no tráfego pela rede. Apenas pegar é que os valores para cada chave tem que ser do 
+mesmo tipo de dados. Se forem tipos de dados diferentes, ele deve ser explicitamente convertido.
