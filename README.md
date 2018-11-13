@@ -1,2 +1,2 @@
 # data-engineer
-# Repositório usado para teste -- Engenheiro de Dados -- Semantix
+# Repositório usado para teste -- Engenheiro de Dados
