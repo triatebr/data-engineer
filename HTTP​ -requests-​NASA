@@ -1,0 +1,32 @@
+#Questões foram respondidas usando o terminal do Linux, os print's encontram-se na pasta 'img' do GIT
+
+Questões
+Responda as seguintes questões devem ser desenvolvidas em Spark utilizando a sua linguagem de preferência.
+1. Número de hosts únicos.
+Jul95:
+cat NASA_access_log_Jul95 | awk '{print $1}' |sort |uniq -c |sort -n |wc -l
+Aug95:
+cat NASA_access_log_Aug95 | awk '{print $1}' |sort |uniq -c |sort -n |wc -l
+
+
+2. O total de erros 404.
+Jul95:
+cat NASA_access_log_Jul95 | awk '{print $9}' |grep 404 |wc -l
+Aug95:
+cat NASA_access_log_Aug95 | awk '{print $9}' |grep 404 |wc -l
+
+3. Os 5 URLs que mais causaram erro 404.
+Jul95: 
+cat NASA_access_log_Jul95 | awk '{if ($9 =404) {print $7}}' | sort | uniq -c | sort -n
+Ago95:
+cat NASA_access_log_Aug95 | awk '{if ($9 =404) {print $7}}' | sort | uniq -c | sort -n
+
+4. Quantidade de erros 404 por dia.
+Jul95: 
+cat NASA_access_log_Jul95 | awk '{if ($9 =404) {print $4}}' | cut -d: -f1| sort | uniq -c |sort -n
+Aug95:
+cat NASA_access_log_Jul95 | awk '{if ($9 =404) {print $4}}' | cut -d: -f1| sort | uniq -c |sort -n
+
+
+5. O total de bytes retornados.
+--
