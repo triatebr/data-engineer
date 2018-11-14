@@ -4,8 +4,8 @@ Qual o objetivo do comando cache em Spark?
 Usado para pequenos conjuntos de dados, o comando 'cache()' é utilizado para alocar os arquivos na memória para posterior 
 manipulação dos dados.
 
-O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em
-MapReduce. Por quê?
+O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em MapReduce. 
+Por quê?
 É importante destacar que o MapReduce é mais lento que o Spark na inicialização das tarefas. O Spark é mais rápido que o 
 MapReduce nas operações de leitura de entrada e map. Por fim, o Spark é mais rápido que o MapReduce na fase de combinação. 
 Isto ocorre pois a combinação baseada em hash é mais eficiente que a combinação baseada em sort para o WC. 
@@ -13,13 +13,14 @@ O Spark possui uma menor complexidade quando trata coleções de informações e
 dados e por este motivo é mais rápido que o MapReduce.
 
 Qual é a função do SparkContext?
-O SparkContext​ configura os serviços internos e estabelece uma conexão com um ambiente de execução do Spark .
+O SparkContext configura os serviços internos e estabelece uma conexão com um ambiente de execução do Spark .
 Uma vez SparkContextcriado, você pode usá-lo para criar RDDs , acumuladores e variáveis de difusão , acessar os serviços 
 do Spark e executar trabalhos (até que SparkContext seja interrompido).
 
 ** Sobre o código Scala:
 
-
 O código em questão lê/interpreta um arquivo do 'hdfs' (Haddop).
 Na sequencia o texto é quebrado por espaço em branco e as palavras são contadas.
 A quantidade de palavras é salva no 'hdfs'
+
+HTTP requests to the NASA Kennedy Space Center WWW server:
