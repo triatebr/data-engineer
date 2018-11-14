@@ -14,8 +14,20 @@ dados e por este motivo é mais rápido que o MapReduce.
 
 Qual é a função do SparkContext?
 O SparkContext configura os serviços internos e estabelece uma conexão com um ambiente de execução do Spark .
-Uma vez SparkContextcriado, você pode usá-lo para criar RDDs , acumuladores e variáveis de difusão , acessar os serviços 
+Uma vez SparkContext criado, você pode usá-lo para criar RDDs , acumuladores e variáveis de difusão , acessar os serviços 
 do Spark e executar trabalhos (até que SparkContext seja interrompido).
+
+GroupByKey é menos eficiente que reduceByKey​ ​em grandes dataset. Por quê?
+Ao contrário de groupByKey, reduceByKey não mistura dados no início. Como sabe que a operação de 
+redução pode ser aplicada na mesma partição primeiro, somente o resultado da função de redução 
+é embaralhado na rede. 
+Isso causa uma redução significativa no tráfego pela rede. Apenas pegar é que os valores 
+para cada chave tem que ser do mesmo tipo de dados. Se forem tipos de dados diferentes, ele deve ser explicitamente convertido.
+
+Explique com suas palavras o que é Resilient Distributed Datasets (RDD).
+Encaro o RDD como recurso do Spark Core, que que permite o processamento distribuído em grande 
+escala. Sua responsábilidade é a gestão de memória, recuperação de falhas, distribuição e 
+monitormanto dos jobs em um cluster e integração com os sistemas de armazenamento. 
 
 ** Sobre o código Scala:
 
